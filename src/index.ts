@@ -1,5 +1,5 @@
 class ToCamelCase {
-  private replace = (value: string) => {
+  replace = (value: string) => {
     let ct = value.charAt(0).toLowerCase();
     const val = value.substr(1);
     ct =
@@ -13,7 +13,7 @@ class ToCamelCase {
     return ct;
   };
 
-  private transformObject = (value: any) => {
+  transformObject = (value: any) => {
     const keys = Object.keys(value) as string[];
 
     keys.forEach((oldKey: string) => {
@@ -32,11 +32,11 @@ class ToCamelCase {
     return value;
   };
 
-  private transformArray = (value: object[]) => {
+  transformArray = (value: object[]) => {
     return value.map(this.transformObject);
   };
 
-  public transform(value: any, ...args: any[]): any {
+  transform(value: any, ...args: any[]): any {
     if (!value) {
       return value;
     }
