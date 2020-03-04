@@ -1,78 +1,55 @@
-# SanStepper
+# SanCamel
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/3db9af5a76aa62568f0f/maintainability)](https://codeclimate.com/github/reiosantos/ng-san-stepper/maintainability)
 [![Build Status](https://travis-ci.com/reiosantos/ng-san-stepper.svg?branch=master)](https://travis-ci.com/reiosantos/ng-san-stepper)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3db9af5a76aa62568f0f/test_coverage)](https://codeclimate.com/github/reiosantos/ng-san-stepper/test_coverage)
 
 
-Angular Steppers directive for Angular Material
-
-Based on Material Steppers: 
-https://material.angular.io/components/stepper/overview#error-state
+Module to transform all sorts of values to camel case
 
 # USAGE
 ## Installation in package.json
 
 ```bash
-npm i -S ng-san-stepper
+npm i -S san-camel
 ```
 
-**note**: works with angular >= 2
+### Example with Objects
 
-### Import to app module
+```js
+import {SanToCamelCase} from "san-camel/dist";
 
-```ts
-import { SanStepperModule } from 'ng-san-stepper';
+const testObject = { "my-name": "some name", "another-name": "guess it" }
+const formattedValue = SanToCamelCase(testObject);
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    SanStepperModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+// output: { myName: "someName", anotherName: "guess it" }
+
 ```
 
-### Write your html
+### Example with Strings
 
-```html
-<san-stepper (stepSubmit)="onSubmit($event)">
+```js
+import {SanToCamelCase} from "san-camel/dist";
 
-	<your-first-step #step></your-first-step>
-	<your-second-step #step></your-second-step>
-	.....
-	<your-last-step #step></your-last-step>
+const testObject = "test-the-string-dude";
+const formattedValue = SanToCamelCase(testObject);
 
-</san-stepper>
+// output: testTheStringDude
+
 ```
 
-# Stepper Options
+### Example with Arrays of objects
 
+```js
+import {SanToCamelCase} from "san-camel/dist";
 
-Detailed service operations bellow:
+const testObject = [{"this is bad": "is it", }, {"this dude": "is it working"}];
+const formattedValue = SanToCamelCase(testObject);
 
+// output: [ { thisIsBad: 'is it' }, { thisDude: 'is it working' } ]
 
-# TODO
-
-- [x] Horizontal steppers
-- [x] Linear steppers
-- [x] Vertical steppers
-- [ ] Non-linear steppers
-- [ ] Alternative labels
-- [ ] Optional steps
-- [ ] Editable steps
-- [ ] Stepper feedback
-- [ ] Custom Css Classes
-- [ ] Create a better demo page with all options.
+```
 
 ## Remarks
-
-- Based on:
- - [Angular Material Steppers](https://github.com/marcosmoura/angular-material-steppers)
 
 - Thanks to all ;)

@@ -17,10 +17,11 @@ class ToCamelCase {
     const val = value.substr(1);
     ct =
       ct +
-      val.replace(/([-_][a-zA-Z0-9])/g, group =>
+      val.replace(/([-_ ][a-zA-Z0-9])/g, group =>
         group
           .toUpperCase()
           .replace('-', '')
+          .replace(' ', '')
           .replace('_', ''),
       );
     return ct;
@@ -28,7 +29,7 @@ class ToCamelCase {
 
   private transformObject = (value: any) => {
     if (typeof value !== 'object') {
-      return this.replace(value);
+      return value;
     }
 
     const keys = Object.keys(value) as string[];
