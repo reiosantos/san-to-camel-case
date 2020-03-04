@@ -1,0 +1,45 @@
+{
+	"name": "san-camel",
+	"version": "1.0.1",
+	"description": "Convert (Objects keys, Arrays of Objects and strings) to camel case",
+	"main": "./dist/index.ts",
+	"type": "./dist/index.d.ts",
+	"private": false,
+	"scripts": {
+		"build": "tsc",
+		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+		"lint": "tslint -p tsconfig.json",
+		"test": "jest --config jestconfig.json --passWithNoTests",
+		"prepare": "npm run build",
+		"prepublishOnly" : "npm test && npm run lint && npm run format",
+		"preversion" : "npm run lint",
+		"version" : "npm run format && git add -A src",
+		"postversion" : "git push && git push --tags"
+	},
+	"keywords": [
+		"tocamelcase",
+		"camecase",
+		"package",
+		"san",
+		"npm"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/reiosantos/san-to-camel-case"
+	},
+	"bugs": {
+		"url": "https://github.com/reiosantos/san-to-camel-case/issues"
+	},
+	"homepage": "https://github.com/reiosantos/san-to-camel-case#readme",
+	"author": "reiosantos",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/jest": "^25.1.3",
+		"jest": "^25.1.0",
+		"prettier": "^1.19.1",
+		"ts-jest": "^25.2.1",
+		"tslint": "^6.0.0",
+		"tslint-config-prettier": "^1.18.0",
+		"typescript": "^2.9.2"
+	}
+}
