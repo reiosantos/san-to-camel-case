@@ -27,6 +27,10 @@ class ToCamelCase {
   };
 
   private transformObject = (value: any) => {
+    if (typeof value !== 'object') {
+      return this.replace(value);
+    }
+
     const keys = Object.keys(value) as string[];
 
     keys.forEach((oldKey: string) => {
