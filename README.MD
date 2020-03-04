@@ -1,10 +1,5 @@
 # SanCamel
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/3db9af5a76aa62568f0f/maintainability)](https://codeclimate.com/github/reiosantos/ng-san-stepper/maintainability)
-[![Build Status](https://travis-ci.com/reiosantos/ng-san-stepper.svg?branch=master)](https://travis-ci.com/reiosantos/ng-san-stepper)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/3db9af5a76aa62568f0f/test_coverage)](https://codeclimate.com/github/reiosantos/ng-san-stepper/test_coverage)
-
-
 Module to transform all sorts of values to camel case
 
 # USAGE
