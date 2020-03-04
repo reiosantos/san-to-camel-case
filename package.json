@@ -1,6 +1,6 @@
 {
 	"name": "san-camel",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Convert (Objects keys, Arrays of Objects and strings) to camel case",
 	"main": "./dist/index.ts",
 	"type": "./dist/index.d.ts",
